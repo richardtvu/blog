@@ -7,7 +7,7 @@ After over 300.5 hours in RB101, I feel both excited and scared of the written a
 
 Take this example: "What does the following code return? What does it output? Why? What concept does it demonstrate?"
 
-![Source](https://i.ibb.co/hm1X3ML/wap-example-1.png)
+![Example 1](https://i.ibb.co/hm1X3ML/wap-example-1.png)
 
 A student's answer was thorough, but I noticed minor mistakes. Here's the relevant portion of her answer:
 
