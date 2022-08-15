@@ -3,71 +3,44 @@ title: "The Journey to Learning in Public"
 date: 2022-08-15
 ---
 
-e.g. inspired by https://www.swyx.io/learn-in-public/
+Dear Richard,
 
-> Whatever your thing is, make the thing you wish you had found
-when you were learning. Document what you did and the problems you
-solved. Organize what you know and then Open Source Your Knowl-
-edge."
-> Don’t judge your results by retweets or stars or upvotes — just talk to
-yourself from three months ago. Resist the immediate bias for atten-
-tion. Your process needs to survive regardless of attention, if it is to
-survive at all. Eventually, they will come. But by far the biggest benefi-
-ciary of you helping past you, will be future you. If (when) others benefit,
-that’s icing on the cake.
+I'm proud of you for developing the discipline of studying programming everyday and for learning by teaching! You've realized that not only does teaching help you learn better, sharing what you've learned helps you fulfill your need for community, connection, and meaning. Now, it's time to take another step in improving your learning capacity by leanring in public.
 
-> This is your time to suck. When you have no following and no personal
-brand, you also have no expectations weighing you down. You can ex-
-But I’m Scared 5
-periment with different formats, different domains. You can take your
-time to get good. Build the habit. Build your platform. Get comfortable
-with your writing/content creation process. Ignore the peer pressure
-to become an “overnight success” — even “overnight successes” went
-through the same thing you are.
+I know. You've felt scared of sharing what you've learned in public:
+- What if internet trolls come out to attack you?
+- What if you say something wrong and your career ends?
+- What if you come off as inauthentic and attention-seeking?
+- What if... \[insert multitudes of catastrophic hypotheticals\]?
 
-https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming/
+Well, you've seen that your friends have appreciated the hard work you've put into helping them. You've seen your mentor and coworkers at work appreciate how you put in time to document things and make sure you can communicate technical problems and solutions to them. You've also seen that even when you made mistakes, whether it was in social faux pas or in technical knowledge/communication, your friends and coworkers have forgiven you and accepted you.
 
+Thus, I believe that as long as you continue to do your best to be respectful, humble, and accountable, that reasonable people will continue to accept and care about you. And that's what really matters: The people who matter to you will still accept you and appreciate you, even when you make a silly mistake (as long as you've done the mistake in good faith)!
 
-> 1.4 Teach to Learn
-“If you can’t explain it simply, you don’t understand it well
-enough.” - Albert Einstein
-Did I mention that teaching is the best way to Learn in Public? You only
-truly know something when you’ve tried teaching it to others. All at
-once you are forced to check your assumptions, introduce prerequisite
-concepts, structure content for completeness, and answer questions you
-never had.
-Probably the most important skill in teaching is learning to talk while
-you code. It can be stressful but you can practice it like any other skill.
-It turns a mundane talk into a captivating high-wire act. It makes pair
-programming a joy rather than a chore. My best technical interviews
-have been where I ended up talking like I teach, instead of trying to
-Mentors, Mentees, and Becoming an Expert 7
-prove myself
+With that being said, let's talk about learning in public and what you'll want to do with it:
+
+- Write about what the things you struggled with:
+  - What you did
+  - The problems you solved.
+
+- Keep your past self in mind as your audience. There's enough similarity between your past self and future you that at the very least, you'll help yourself out even if nobody else feels helped. And with enough tries, you'll eventually be able to help others out too!
+
+So... Embrace the suck!
+- Take your time.
+- Build the habit of writing down your thoughts everyday (or several times a week).
+- Acknowledge and let go of the temptation to seek success through blogging - this is about how you can help yourself and eventually others!
+- Be humble. When you aren't sure, admit that you aren't certain.
 
 
->  Cunningham’s Law: “The best way to get the right answer on the In-
-ternet is not to ask a question; it’s to post the wrong answer.” Be-
-ing publicly wrong attracts teachers, as long as you don’t do it in such
-high quantity that people give up on you altogether. Conversely, once
-you’ve gotten something wrong in public, you never forget it.
-
-https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045
+Remember: [**You are not your writing.**]((https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming/):
+). The point of thinking and writing is to help you clarify what's important, learn, and help others. If someone finds problems with your writing, great! That person just helped you see a blind spot that you can correct and improve.
 
 
-Resources for me to follow up on:
-- [What to blog about?](https://jvns.ca/blog/2021/05/24/blog-about-what-you-ve-struggled-with/)
-  - Writing about what I struggled with will help me crystalize what I learned and highlight what I focus on, what is meaningful and interestingn to me.
-  - Take thing to process things that i struggle with.
-  - Practice identifying wat I learned.
-  - Be honest,
-    - e.g. I'm not too sure (if I'm really not certain, otherwise just say something)
-  - positive, and try not to be toooooo wrong. Talk about my own experience and to a past version of me.
-  - Talk about something I learned recently and that's OK.
+You've seen time and time again, when your friends can't understand what you're teaching, there's a good chance you have work to do on your understanding of what you're teaching. So if your writing doesn't make sense, so be it. You've just found a spot to revise and brush up on your models.
 
 
+And now, you're just taking this process of learning by teaching to the next level. Congrats Richard!
 
-- [Those Who Teach Can Do](https://reid.medium.com/those-who-teach-can-do-98a30e9a74ea)
+Sincerely,
 
-
-- [ ] Write to a previous version of Richard - the fears of blogging.
-
+Richard
