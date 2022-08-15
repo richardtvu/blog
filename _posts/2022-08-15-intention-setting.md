@@ -1,4 +1,8 @@
-# Written Assessment Preparations
+---
+title: "Wishing to learn in public"
+date: 2022-08-15
+---
+
 
 **WISH**: Prepare for the written assessment by actively engaging with the study materials.
 
