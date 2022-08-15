@@ -24,3 +24,8 @@ Build a strong sense of community, meaning, altruism, generosity, and emotional 
 **PLAN**: If I see any warning signs or just straight up feel impatient or bored, then I'll publish what I have ... and just start publishing regardless (e.g. this blog post).
 
 If I feel fear, then I will set my intention on my blog homepage/readme, e.g. "This blog will contain unpolished thoughts I'm having as I'm learning. My posts will most likely have many grammar, spelling, and logic errors."
+
+-----
+
+
+P.S. If you're reading this and want to reach me, shoot me an email at studious.vu@gmail.com!
