@@ -1010,3 +1010,32 @@ empty `string` is truthy
 empty `array` is truthy
 empty hash is truthy
 ```
+
+
+> You may access a variable within a block if you define the variable _before_ the block.
+
+`Array#map` -- from the book _head first ruby_.
+
+> The `map` method takes each element of an array, passes [the element] to a block, and builds a new array out of the values the block returns.
+
+> The `map` method adds the block's return value itself to a new array.
+
+```ruby
+def map
+  new_arr = []
+  self.each do |element|
+    new_arr << yield(element)
+  end
+  new_arr
+end
+
+some_array.map do |element|
+  # does something
+end
+```
+
+An implementation for `map` could look like the above. What's happening is that `map` will iterate over each element in the collection we invoked `map` on and pass in the element to a `do..end` block. Within this block, we `yield` control to a block and pass in the `element` as an argument to the block. The block then returns a value back to `yield`, and we add this return value to the `new_arr`. At the end, `map` returns a new array consisting of the elements returned by the block passed into `map`.
+
+When are hashes better than arrays?
+- When you want to quickly access specific data without having to know the exact index or searching through the pile of data one by one.
+
