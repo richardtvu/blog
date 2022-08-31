@@ -1039,3 +1039,7 @@ An implementation for `map` could look like the above. What's happening is that 
 When are hashes better than arrays?
 - When you want to quickly access specific data without having to know the exact index or searching through the pile of data one by one.
 
+
+
+
+
