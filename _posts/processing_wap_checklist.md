@@ -1,0 +1,298 @@
+# Written Assessment Preparation
+
+## Local variable scope
+
+**Local variable scope** is where a local variable can be accessed. Local variables initialized in the outer scope of a block may be accessed from within the inner scope of the block. However, variables initialized within the inner scope of a block may not be accessed from without the block. Methods have their scope, i.e. only local variables passed into the method or initialized within the method may be accessed in the method. Peer scopes do not conflict, e.g. variables declared in non-overlapping blocks won't be accessible to each other.
+
+In the words of [Ruby Notes](https://goalkicker.com/RubyBook/RubyNotesForProfessionals.pdf):
+
+> [Local variables]  can not be used outside the "declaration containers" scope...
+> [When you] declare a variable inside a `do..end` block ... curly braces `{}`, [the variable] will be local and scoped to the block it has been declared in.
+
+Therefore, you'll get an error when you try to use the variable outside of the block.
+```ruby
+loop do
+  sayings = %w(I love you, my dear)
+  break
+end
+
+p sayings # => NameError: undefined local variable or method `sayings' for main:Object
+```
+
+You'll also get a `NameError` when you try you  use a method-scope-initialized variable outside of the method.
+
+```ruby
+def dragon_whisper
+  whisper = "I love you, my dear."
+  puts whisper
+end
+
+puts whisper #NameError
+```
+
+In other words, local variables are **scoped** to where you initialize the variables, e.g. in a method, block, or the outer scope.
+
+### Local variables cannot be used _outside_ of the scope you initialized the variables.
+
+This local variable scoping rule has an interesting implication: **Peer scopes** do not conflict, i.e. scopes that don't overlap won't affect variables initialized in each others' scopes.
+
+```ruby
+loop do
+  a = "Hello"
+  puts a # outputs "Hello"
+end
+
+loop do
+  puts a # => raises NameError
+end
+```
+
+The rule is you can't access a local variable defined in a block outside the block. As a consequence, when we try to use the variable `a` in another block, (which has a **peer scope**), we get a `NameError`.
+
+### However, you can use outer-scope variables in blocks
+
+A variable you initialize _before_ a block can be used within the block.
+
+```ruby
+dragon = "Amy"
+
+loop do
+  puts dragon # Outputs "Amy"
+  break
+end
+```
+
+Now, contrast blocks with methods. You can use variables initialized outside (specifically, before) the block inside the block. However ...
+
+### You can't use local variables in methods unless you pass in these variables as arguments.
+
+```ruby
+love = true
+
+def does_love_exist?
+  love
+end
+
+puts does_love_exist? # NameError: undefined local variable or method `love'
+
+def does_love_exist?(belief)
+  belief
+end
+
+statement = "Love exists."
+
+puts does_love_exist?(statement)
+# "Love exists."
+# => nil
+```
+
+### Blocks have another behavior to look out for: **variable shadowing**.
+
+When you define a block with a parameter that has the same name as a local variable in the outer scope, you won't be able to access the outer-scope variable. The block **shadows** the outer-scope variable.
+
+```ruby
+
+friend = "Amy"
+
+friends = ["JD", "Pocahontas", "Brian"]
+
+def hug(person)
+  person << " was hugged!"
+  puts person
+end
+
+friends.each do |friend|
+  hug(friend)
+  puts friend # e.g. "JD was hugged"
+end
+
+puts friend
+# "Amy"
+# => nil
+p friends
+# ["JD was hugged!", "Pocahontas was hugged!", "Brian was hugged!"]
+# => ["JD was hugged!", "Pocahontas was hugged!", "Brian was hugged!"]
+```
+
+### Peer scopes don't conflict
+
+`if` and `case` statements don't have their own scope, so you can use variables declared within these statements in the **parent-scope** (the scope you wrote the statement in).
+
+```ruby
+# PARENT SCOPE
+if true
+  new_friend = "Allison"
+end
+
+p new_friend
+# "Allison"
+# => "Allison"
+```
+
+### Analogy
+
+Local variables are like cell phones. You can activate your cell phone for use with a SIM card and a specific mobile carrier. As long as you are within the range of the cellular network, then people can call and message you. However, if you go outside the network, then you can't be called or messaged.
+
+Activating your cell phone is like initializing a local variable. You can activate your cell phone with different mobile carriers, to use different cellular networks. The range of the cellular network is like the scope of a variable. If you try to use your cellphone outside of the scope of the network, then you can't access the calling or messaging functions.
+
+
+## Mutating vs. non-mutating methods
+
+**Mutating methods** change either the calling object or the arguments passed into the method. Non-mutating methods won't change the calling object or arguments passed into the method.
+
+For instance, `Array#map` is a non-mutating method because `map` returns a new array instead of the original array. We can check whether `map` mutates the calling object by using the `object_id` method.
+
+```ruby
+array = ["Jane", "Jack", "Jill"]
+p array                               # outputs and returns ["Jane", "Jack", "Jill"]
+p array.object_id                     # outputs a number, e.g. 8840
+
+friends = array.map do |friend|
+  "#{friend}, a friend of Richard"
+end
+
+p array                               # same as before
+p array.object_id                     # same as before
+p friends                             # ["Jane, a friend of Richard",
+                                      #  "Jack, a friend of Richard",
+                                      #  "Jill, a friend of Richard"],
+p friends.object_id                   # e.g. 37820
+```
+
+We know that the array referenced by `array` remains the same because the `object_id` and the value for the array stays the same. Furthermore, we know that the `friends` variable points to a different array because the `object_id` is different.
+
+However, the `Array#map!` method is a _mutating_ method because we make changes to the calling object, the array we invoke the `map!` method on.
+
+```ruby
+array = ["Allison", "Amy", "April"]
+p array
+p array.object_id
+
+friends = array.map! do |friend|
+  "#{friend}, a friend of Richard"
+end
+
+p array
+p friends
+p friends.object_id
+```
+
+The variables `array` and `friends` both point to the same object, which you know because both invocations of `object_id` will return the same id. Thus, both variables output the same array values:
+
+```ruby
+["Allison", "Amy", "April"]
+300
+["Allison, a friend of Richard", "Amy, a friend of Richard", "April, a friend of Richard"]
+["Allison, a friend of Richard", "Amy, a friend of Richard", "April, a friend of Richard"]
+300
+```
+
+Supporting souces:
+- [Part 4](https://medium.com/how-i-started-learning-coding-from-scratch/advice-for-109-written-assessment-part-4-e205174ece7b)
+
+## [Variables as pointers](https://launchschool.com/books/ruby/read/more_stuff#variables_as_pointers)
+
+- Variables store **pointers**, not values, to an **address spaces** in memory.
+
+```ruby
+a = "hi there"
+b = a
+a = "not there"
+```
+
+We reassign `a` to "not there". However, evaluating `b` will still return "hi there" because `b` contains a pointer to "hi there".
+
+![](https://d2aw5xe2jldque.cloudfront.net/books/ruby/images/variables_pointers1.jpg)
+
+
+```ruby
+a = "hi"
+b = a
+a << ", Bob"
+```
+
+We _mutate_ the string referenced by `a`, which is also referenced by `b`. Therefore, evaluating `b` will return `hi, Bob`
+
+![](https://d2aw5xe2jldque.cloudfront.net/books/ruby/images/variables_pointers2.jpg)
+
+What's `a`, `b`, and `c`? What if the last line was `c = a.uniq!`?
+
+```ruby
+a = [1, 2, 3, 3]
+b = a
+c = a.uniq
+```
+
+`a` and `b` point to `[1,2,3,3]`. `c` points to `[1,2,3]`. If the last line was `c = a.uniq!`, then `a`, `b`, and `c` would point to `[1,2,3]`.
+
+What is `a` after the `test` method returns? Did the method modify the value of `a`?
+
+```ruby
+def test(b)
+  b.map {|letter| "I like the letter: #{letter}"}
+end
+
+a = ['a', 'b', 'c']
+test(a)
+```
+
+> When we use variables to pass arguments to a method, we're essentially assigning the value of the original variable (a in this case) to a variable inside the method (b). This is equivalent to executing b = a. Inside the method, the operations we perform on the b variable determine whether the value of a will change. Some operations, like map, will have no affect on a. Others, like map! will mutate the value assigned to a.
+
+## Method definition and method invocation
+
+A method definition consists of the keyword `def` followed by the method name, optional parameter, optional body, and the `end` keyword. A method invocation involves an object calling the method and (optionally) passing in arguments.
+
+## Implicit Return Value of Method Invocations and Blocks
+
+Methods and block implicitly return the last evaluated expression in the given method or block, unless we use explicit `return`.
+
+## `Array#sort`
+
+- The `#sort` method implements the spaceship operator, `<=>` to compare and sort elements in a collection. By default, the `sort` method will order elements in non-descending order (least to greatest). If you pass in a block, you can change the ordering of the elements.
+
+- `<=>` is a method that accepts two operands, the calling object and an argument, e.g. `1` and `2` in `1 <=> 2`. The spaceship operator returns one of 4 values when comparing operands:
+  - `-1` When the calling object (left operand) is less than the right, e.g. `1 <=> 2`
+  - `0`, when the calling object and right operand have the same value.e.g., `1<=>1`
+  - `1`, when the calling object has a greater value than the right operand. `2<=>1`
+  - `nil`, when the calling object and the right operand are of different data types and uncomparable, e.g. `31 <=> '12'`, we are unable to use the spaceship operator to compare a number with a string*. *unless you override the spaceship operator and redefine the operator.
+- Is `Array#sort` mutating?
+  - No. This `sort` method will return a _new_ array containing elements from the calling object that we've sorted according to the value of the block.
+
+## `false` vs `nil` and the idea of **truthiness**
+
+**Truthiness** is a quality that describes whether an object will evaluate to `true` or `false` in a boolean context.
+- Variables that are **truthy** evaluate to `true` in a boolean context.
+- Variables that are **falsy** evaluate to `false` in a boolean context.
+- All values are truthy, except for `false` or `nil`.
+- `false` and `nil` are `falsy`, i.e. these values evaluate to `false` in a boolean context.
+- Truthy is not the same as `true`. For instance, the value `1` is truthy, but `1 == true` would evaluate to `false`.
+- Falsy is not the same as `false`. For instance, `nil` is falsy, but `nil == false` would evaluate to `false` because `nil` and `false` are different objects.
+
+## `puts` vs `return` [link](https://launchschool.com/books/ruby/read/methods#putsvsreturnthesequel)
+
+> Ruby methods ALWAYS return the evaluated result of the last line of the expression unless an explicit return comes before it.
+
+```ruby
+def add_three(number)
+  number + 3
+end
+
+returned_value = add_three(4)
+puts returned_value
+```
+
+We initialize the `returned_value` variable to the value returned by the `add_three` method. Then, we print the `returned_value`, `7`, to the output.
+
+What happens when we add an explicit `return` to this code?
+
+```ruby
+def add_three(number)
+  return number + 3
+  number + 4
+end
+
+returned_value = add_three(4)
+puts returned_value
+```
+
+We output `7` because we return the value of `number + 3` out of the `add_three` method using the `return` keyword. We don't execute `number + 4`.
