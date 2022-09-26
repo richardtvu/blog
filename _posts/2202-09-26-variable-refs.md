@@ -1,3 +1,8 @@
+---
+title: Variable References and Mutability of Ruby Objects
+date: 2022-09-26
+---
+
 ## [Part 1: Variable References and Mutability of Ruby Objects](https://launchschool.medium.com/variable-references-and-mutability-of-ruby-objects-4046bd5b6717)
 
 Learning Objective:

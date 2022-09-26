@@ -1,3 +1,8 @@
+---
+title: Object Passing
+date: 2022-09-26
+---
+
 # Part 3: [Object Passing in Ruby — Pass by Reference or Pass by Value](https://launchschool.medium.com/object-passing-in-ruby-pass-by-reference-or-pass-by-value-6886e8cdc34a)
 
 ## Review
@@ -120,28 +125,28 @@ Ruby makes copies of references and passes in those copies to methods. We cannot
 > The original reference given by the argument cannot be reassigned.
 
 
-### Analogy 
+### Analogy
 
-A reference is like a cell phone number. With this number, I can call a friend. To make it easier to call my friends, I store my friends' numbers in my contacts. For instance, I might create a contact for my friend "Amy" and store `123-456-7890` as her number in the entry. Now, I can call Amy anytime I want. 
+A reference is like a cell phone number. With this number, I can call a friend. To make it easier to call my friends, I store my friends' numbers in my contacts. For instance, I might create a contact for my friend "Amy" and store `123-456-7890` as her number in the entry. Now, I can call Amy anytime I want.
 
-The entry in my phonebook for Amy is like a variable, which contains a reference (the phone number). 
+The entry in my phonebook for Amy is like a variable, which contains a reference (the phone number).
 
-However, you can't call her unless you have her number, so we make a new entry for Amy and store her number in that entry. Now, you can call Amy from your contacts. 
+However, you can't call her unless you have her number, so we make a new entry for Amy and store her number in that entry. Now, you can call Amy from your contacts.
 
-Your ability to call Amy from your contacts is like a method. Unless we initialize an entry in your phone book, you don't have access to Amy. When I give you her number, I am passing a reference to Amy into your calling method. Now, you too can call Amy. 
+Your ability to call Amy from your contacts is like a method. Unless we initialize an entry in your phone book, you don't have access to Amy. When I give you her number, I am passing a reference to Amy into your calling method. Now, you too can call Amy.
 
-However, if you change Amy's phone number in your phone. You don't have access to the same Amy as I do, you have access to a different Amy. That being said, my phone's entry for Amy is still pointing to the same Amy as before, since you changing the number stored in your phone doesn't affect the number stored in my phone. 
+However, if you change Amy's phone number in your phone. You don't have access to the same Amy as I do, you have access to a different Amy. That being said, my phone's entry for Amy is still pointing to the same Amy as before, since you changing the number stored in your phone doesn't affect the number stored in my phone.
 
 ### Visual Example
 
 Abstraction:
 [![](https://mermaid.ink/img/pako:eNptjrEOgjAQhl_lcjO8AIMD0c1JR-twtIfUQEvOFmMI724bYDBxuv--fPnzz6i9Yayw7f1bdyQBzhflAF6xeQiNHUwklpqeMwQwVlgH692mAdQ34ZaFneZ7JuxMPjWU5QF880y6cj-NO_zfN1EfeSvCAgeWgaxJC-cMFYaOB1ZYpWi4pdgHhcotSY2jocAnY4MXrIJELpBi8NeP0_u_OkdLacqwwuULa1dYEw)](https://mermaid.live/edit#pako:eNptjrEOgjAQhl_lcjO8AIMD0c1JR-twtIfUQEvOFmMI724bYDBxuv--fPnzz6i9Yayw7f1bdyQBzhflAF6xeQiNHUwklpqeMwQwVlgH692mAdQ34ZaFneZ7JuxMPjWU5QF880y6cj-NO_zfN1EfeSvCAgeWgaxJC-cMFYaOB1ZYpWi4pdgHhcotSY2jocAnY4MXrIJELpBi8NeP0_u_OkdLacqwwuULa1dYEw)
 
-In this example below, the variable `number` stores a reference to the String `"123-456-7890"`. We pass in a _copy_ of the `reference` to a String and store that reference for `Amy's Number`. Both `Amy's Number` and the `number` point to the same String. 
+In this example below, the variable `number` stores a reference to the String `"123-456-7890"`. We pass in a _copy_ of the `reference` to a String and store that reference for `Amy's Number`. Both `Amy's Number` and the `number` point to the same String.
 
 [![](https://mermaid.ink/img/pako:eNp9UstOwzAQ_JWVL700Eu9HDkigcuVAe0EYISfeNBaxN9rYoKjtv-P0kaYt4rYaz8zO2F6InDSKVBQV_eSlYg-ziXQATcjmrOoSXLAZcgcBMBbI6HJ8l6KfUzi_uJTio6Og09J1Q38KSfIAU8_GzQ9s9xDAt6pCZzmKRsnV9U1ye3d_Njq27KW1aprIhi0BQBvG3BtyMHvaIH-GXkdZ5lS34Evc40uImEH9Omh3hJx0hGPNxryLBsbBegkVwx0Fm6j83Cfr-1j0Jem49I0CQ12SQ8iIvvp-J9LTOzmgRKtH244aeNkodj41GefXx_xPsS1r8HBiLCyyVUbHj7LoOFLEG7QoRRpHjYUKlZdCulWkhlorj8_aeGKRFqpqcCxU8DRtXS5SzwF3pIlRMb7dsla_esrenA)](https://mermaid.live/edit#pako:eNp9UstOwzAQ_JWVL700Eu9HDkigcuVAe0EYISfeNBaxN9rYoKjtv-P0kaYt4rYaz8zO2F6InDSKVBQV_eSlYg-ziXQATcjmrOoSXLAZcgcBMBbI6HJ8l6KfUzi_uJTio6Og09J1Q38KSfIAU8_GzQ9s9xDAt6pCZzmKRsnV9U1ye3d_Njq27KW1aprIhi0BQBvG3BtyMHvaIH-GXkdZ5lS34Evc40uImEH9Omh3hJx0hGPNxryLBsbBegkVwx0Fm6j83Cfr-1j0Jem49I0CQ12SQ8iIvvp-J9LTOzmgRKtH244aeNkodj41GefXx_xPsS1r8HBiLCyyVUbHj7LoOFLEG7QoRRpHjYUKlZdCulWkhlorj8_aeGKRFqpqcCxU8DRtXS5SzwF3pIlRMb7dsla_esrenA)
 
-Reassigning `Amy's Number` to a different string does _not_ change the original reference number stored in `number`. Thus, `Amy's Number` points to a different String, `999-999-9999`, while `number` still points to `123-456-7890`. 
+Reassigning `Amy's Number` to a different string does _not_ change the original reference number stored in `number`. Thus, `Amy's Number` points to a different String, `999-999-9999`, while `number` still points to `123-456-7890`.
 
 [![](https://mermaid.ink/img/pako:eNptkstqwzAQRX9l0CabGNr0KS8KLe2uZJF0V5WiWONYYElBj4YQ598rW0oa0xiMZ6R77xwG70llBJKS1K3ZVg23Hj5emAZwYbW2fNOAQt8Y8cmIMwpzx8hXrwEQ0mLlpdHwvkgnJ19tJWrxrYNaoY32Z7WbOJgP7cnfPxsjtR8kFmu0qCss4Xp2MxIVxRN0Frlzcq0hZaXoDjRuF0fnOIXSWUyBFBNp-iJ_zk0pfeBw4E0HS2-lXs-YHm0in8YRc9zm7gT5w9uA_R2ltMgvzbd55CgswSevvUz_t4MhoC_sCDkj_DvPG70Af8YaZ03ihOL27r54eKRXk_NZZEoUWsWliL_GfoAnvkGFjJSxFFjz0HpGmD5EadgI7vFNSG8sKWveOpwSHrxZ7nRFSm8DHkWvkkcelVWHX5TW00o)](https://mermaid.live/edit#pako:eNptkstqwzAQRX9l0CabGNr0KS8KLe2uZJF0V5WiWONYYElBj4YQ598rW0oa0xiMZ6R77xwG70llBJKS1K3ZVg23Hj5emAZwYbW2fNOAQt8Y8cmIMwpzx8hXrwEQ0mLlpdHwvkgnJ19tJWrxrYNaoY32Z7WbOJgP7cnfPxsjtR8kFmu0qCss4Xp2MxIVxRN0Frlzcq0hZaXoDjRuF0fnOIXSWUyBFBNp-iJ_zk0pfeBw4E0HS2-lXs-YHm0in8YRc9zm7gT5w9uA_R2ltMgvzbd55CgswSevvUz_t4MhoC_sCDkj_DvPG70Af8YaZ03ihOL27r54eKRXk_NZZEoUWsWliL_GfoAnvkGFjJSxFFjz0HpGmD5EadgI7vFNSG8sKWveOpwSHrxZ7nRFSm8DHkWvkkcelVWHX5TW00o)
 

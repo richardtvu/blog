@@ -1,3 +1,8 @@
+---
+title: Mutating and Non-Mutating Methods
+date: 2022-09-26
+---
+
 # [Part 2: Mutating and Non-Mutating Methods](https://launchschool.com/blog/mutating-and-non-mutating-methods)
 
 Topics:
