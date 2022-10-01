@@ -19,9 +19,15 @@ Initially, this thought came up:
 
 But sorrow arose from the pit of my stomach into what felt like an empty aching hole at my sternum. I realized that I'd be setting myself up for misery and depression if I followed this path. I realized that I can't run away from this fear or let it control my life. 
 
-Instead, I shall face this fear. I will let this fear pass over me and through me. 
+Instead, ... 
 
-I decided. I will _slow down_ and challenge my fear through vulnerability and faith that my friends _do_ love me for who I am (of which what I do is simply a portion of who I am). By slowing down and allowing my friends to overtake me, I give my friends the opportunity to love me regardless of what I can do for them, to meet up with me, and to encourage each other even without my teaching them. By slowing down, I can show myself that even when people move on in their studies or in their career, we can still be friends and I can still be connected and loved. 
+> I shall face this fear. I will let this fear pass over me and through me. 
+
+I decided. 
+
+> I will _slow down_ and challenge my fear through vulnerability and faith that my friends _do_ love me for who I am (of which what I do is simply a portion of who I am). 
+
+By slowing down and allowing my friends to overtake me, I give my friends the opportunity to love me regardless of what I can do for them, to meet up with me, and to encourage each other even without my teaching them. By slowing down, I can show myself that even when people move on in their studies or in their career, we can still be friends and I can still be connected and loved. 
 
 ## The Wish
 
