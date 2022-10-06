@@ -11,6 +11,21 @@ Here's an unrefined collection of notes ...
 2. Get a list of interview questions to give.
 3. Review your process (intros/disclaimers), questions, and cycling through written or interview questions.
 
+## Topics to review
+
+- local variable scope in context of:
+  - method invocation
+  - method definition
+  - blocks
+- mutation vs non-mutation
+- collections
+- variable as pointers
+- puts vs return
+- truthiness - false vs nil
+- method definition vs. method invocation
+- implicit return values
+- `Array#sort`
+
 ## Written Questions List Prep
 
 General structure for practicing the Written Assessment Questions:
@@ -29,7 +44,6 @@ General structure for practicing the Written Assessment Questions:
 ### Written Questions
 
 - [Source](https://fine-ocean-68c.notion.site/RB101-934e6196044d425f9b2f23830ead6534?p=91bcc598a24d4ad6aadad86802e7412b&pm=s)
-
 
 
 
