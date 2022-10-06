@@ -1,5 +1,5 @@
 ---
-title: Preparing to be a spot lead
+title: "Preparing to be a spot lead"
 date: 2022-10-06
 ---
 
@@ -11,7 +11,7 @@ Here's an unrefined collection of notes ...
 2. Get a list of interview questions to give.
 3. Review your process (intros/disclaimers), questions, and cycling through written or interview questions.
 
-## List of Written Questions
+## Written Questions List Prep
 
 General structure for practicing the Written Assessment Questions:
 
@@ -19,15 +19,23 @@ General structure for practicing the Written Assessment Questions:
 2. Why?
 3. Which concept(s) does this problem illustrate? (e.g. local variable scope)
 
-Misc. Tips
+### Misc. Tips
 
 1. Use **backticks**, `` ` ``, to highlight code, such as variable names, methods, and expressions. No need to backtick line numbers.
 2. Think of the study guide as a word bank of concepts. These are the only concepts relevant to question #3 (on the written exam).
 
     - e.g. A concept, for whatever reason, might demonstrate the importance of single responsibility for a class ... but that's outside of the scope of RB109. A concept can be demonstrated and true in a particular example without being relevant to how to answer the question.
 
+### Written Questions
+
+- [Source](https://fine-ocean-68c.notion.site/RB101-934e6196044d425f9b2f23830ead6534?p=91bcc598a24d4ad6aadad86802e7412b&pm=s)
 
 
-## List of Interview Questions
+
+
+## List of Interview Questions Prep
+
+- [Source](https://docs.google.com/document/d/1usQUJQFr6PGVo3ZWgMi3nVtDRdeUuOUNRtZPtSKkYuE/edit)
+
 
 ## Process...
